@@ -9,6 +9,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\blog-home.html" />
+    <Content Remove="wwwroot\blog-post.html" />
+    <Content Remove="wwwroot\Medieval Dungeon Game Cover 600px x 350px.webp" />
+    <Content Remove="wwwroot\medieval-game.html" />
+    <Content Remove="wwwroot\portfolio-item.html" />
+    <Content Remove="wwwroot\pricing.html" />
+    <Content Remove="wwwroot\ribbon-assets-website.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\blog-home.html" />
+    <None Include="wwwroot\blog-post.html" />
+    <None Include="wwwroot\Medieval Dungeon Game Cover 600px x 350px.webp" />
+    <None Include="wwwroot\medieval-game.html" />
+    <None Include="wwwroot\portfolio-item.html" />
+    <None Include="wwwroot\pricing.html" />
+    <None Include="wwwroot\ribbon-assets-website.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.25" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.25" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.25" />
