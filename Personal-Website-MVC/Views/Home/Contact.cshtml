@@ -1,4 +1,10 @@
-﻿@{
+﻿@* This is a model declaration. Eac View can only have ONE model tied to it.
+    The model statement ensures this View knows how to display & send info
+    using the provided model.
+*@
+@model Personal_Website_MVC.Models.ContactViewModel
+
+@{
     ViewData["Title"] = "Contact";
 }
 
@@ -14,33 +20,54 @@
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
-                    <form id="contactForm" action="https://usebasin.com/f/bc0888473ae1" method="POST">
+                    
+                    <form id="contactForm" asp-action="Contact">
                         <!-- Name input-->
+                        <div asp-validation-summary="ModelOnly" class="form-floating text-danger mb-3"></div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" name="Full name" />
+                            <input asp-for="Name" class="form-control" id="name" type="text" placeholder="Enter your name..." name="Full name" />
                             <label for="name">Full name</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
-                        <!-- Email address input-->
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="Email" id="email" class="form-control" placeholder="name@example.com" name="Email" />
+                            <label for="email">Email</label>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="Subject" class="form-control" placeholder="Subject" name="Subject" />
+                            <label for="subject">Subject</label>
+                            <span asp-validation-for="Subject" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <textarea asp-for="Message" class="form-control" id="message" placeholder="Message" name="Message" style="height: 10rem"></textarea>
+                            <label for="message">Message</label>
+                            <span asp-validation-for="Message" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating mb-3 text-center d d-grid gap-2">
+                            <input type="submit" value="Send Message" class="btn btn-primary btn-lg mt-3" />
+                        </div>
+                    </form>
+
+                        @* <!-- Email address input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" name="email" />
                             <label for="email">Email address</label>
                             <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                             <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                         </div>
+
                         <!-- Phone number input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" name="phone" />
                             <label for="phone">Phone number</label>
                             <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                         </div>
+
                         <!-- Message input-->
                         <div class="form-floating mb-3">
                             <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" name="message"></textarea>
@@ -66,7 +93,7 @@
                         <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                         <!-- Submit Button-->
                         <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit" value="Submit">Submit</button></div>
-                    </form>
+                    </form> *@
                 </div>
             </div>
         </div>
